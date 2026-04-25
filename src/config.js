@@ -11,9 +11,7 @@ import {
 const CONFIG = {
   // ─── Server ──────────────────────────────────────────────────────
   PORT: PORT || 3000,
-  MONGO_URI:
-    MONGO_URI ||
-    "mongodb://192.168.86.2:27017/rod-dev?directConnection=true&replicaSet=rs0",
+  MONGO_URI,
 
   // ─── MinIO ───────────────────────────────────────────────────────
   MINIO_ENDPOINT: MINIO_ENDPOINT || "http://192.168.86.2:9000",

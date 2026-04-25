@@ -15,11 +15,14 @@
 require("dotenv").config();
 const { MongoClient } = require("mongodb");
 
-// ── Connection strings ──────────────────────────────────────────────
-const REMOTE_URI =
-  "REDACTED_ATLAS_URI";
-const LOCAL_URI =
-  "mongodb://192.168.86.2:27017/rod-dev?directConnection=true&replicaSet=rs0";
+// ── Connection strings (from environment) ───────────────────────────
+const REMOTE_URI = process.env.ATLAS_REMOTE_URI;
+const LOCAL_URI = process.env.MONGO_URI;
+
+if (!REMOTE_URI || !LOCAL_URI) {
+  console.error("Missing required env vars: ATLAS_REMOTE_URI, MONGO_URI");
+  process.exit(1);
+}
 
 const REMOTE_DB = "events";
 const REMOTE_COLLECTION = "events";
