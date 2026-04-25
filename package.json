@@ -1,10 +1,16 @@
 {
-  "name": "event-log-service",
-  "version": "1.0.0",
-  "description": "Rodrigo's Event Log Service",
-  "main": "service.js",
+  "name": "rod-dev-service",
+  "version": "2.0.0",
+  "description": "Rod Dev Service — portfolio renders, gym journal, and analytics API",
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon --legacy-watch src/index.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -13,15 +19,18 @@
   "author": "Rodrigo Barraza",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1379.0",
-    "axios": "^0.27.2",
-    "bluebird": "^3.7.2",
-    "body-parser": "^1.20.0",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "mongoose": "^6.6.1",
-    "morgan": "^1.10.0",
-    "nanoid": "^3.3.6",
-    "sharp": "^0.32.1"
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "minio": "^8.0.7",
+    "mongoose": "^8.14.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.3",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.1"
   }
 }
