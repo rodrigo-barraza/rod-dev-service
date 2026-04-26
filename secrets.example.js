@@ -6,7 +6,7 @@
 // ============================================================
 
 // Server
-export const PORT = 3000;
+export const ROD_DEV_PORT = 3000;
 
 // MongoDB (single connection string)
 export const MONGO_URI =
@@ -16,7 +16,7 @@ export const MONGO_URI =
 export const MINIO_ENDPOINT = "http://<host>:9000";
 export const MINIO_ACCESS_KEY = "";
 export const MINIO_SECRET_KEY = "";
-export const MINIO_BUCKET = "rod-dev";
+export const MINIO_BUCKET_NAME = "rod-dev";
 
 // Stable Diffusion / Render API
 export const RENDER_API = "";
