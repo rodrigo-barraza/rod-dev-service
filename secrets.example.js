@@ -1,22 +1,18 @@
 // ============================================================
 // Rod Dev Service — Secrets Template
 // ============================================================
-// Copy this file to secrets.js and fill in your real values.
-//   cp secrets.example.js secrets.js
+// Secrets are resolved from (in priority order):
+//   1. process.env (manual env vars, Docker --env)
+//   2. Vault service (via src/boot.js → VAULT_URL + VAULT_TOKEN)
+//   3. Fallback .env file (../vault/.env)
+//
+// See vault/.env.example for the full list of variables.
 // ============================================================
 
-// Server
-export const ROD_DEV_PORT = 3000;
-
-// MongoDB (single connection string)
-export const MONGO_URI =
-  "mongodb://<host>:<port>/rod-dev?directConnection=true&replicaSet=rs0";
-
-// MinIO (S3-compatible local storage)
-export const MINIO_ENDPOINT = "http://<host>:9000";
-export const MINIO_ACCESS_KEY = "";
-export const MINIO_SECRET_KEY = "";
-export const MINIO_BUCKET_NAME = "rod-dev";
-
-// Stable Diffusion / Render API
-export const RENDER_API = "";
+// ROD_DEV_PORT=3000
+// MONGO_URI=mongodb://user:password@<host>:27017/rod-dev?directConnection=true&replicaSet=rs0&authSource=admin
+// MINIO_ENDPOINT=http://<host>:9000
+// MINIO_ACCESS_KEY=
+// MINIO_SECRET_KEY=
+// ROD_DEV_MINIO_BUCKET_NAME=rod-dev
+// RENDER_API=
